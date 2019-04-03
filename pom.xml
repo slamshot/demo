@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.zfwk</groupId>
+	<artifactId>demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<dependencies>
+		<dependency>
+			<groupId>com.zfwk</groupId>
+			<artifactId>test</artifactId>
+			<version>1.0</version>
+		</dependency>
+	</dependencies>
+	<!-- 私服jar包上传配置 -->
+	<distributionManagement>
+		<repository>
+			<!-- 上传私服仓库ID -->
+			<id>3rd_part</id>
+			<!-- 上传私服仓库name -->
+			<name>3rd_part</name>
+			<url>http://192.168.87.12:8081/repository/3rd_part/</url>
+		</repository>
+		<snapshotRepository>
+			<id>3rd_part</id>
+			<name>3rd_part</name>
+			<url>http://192.168.87.12:8081/repository/3rd_part/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>2.5.2</version>
+					<configuration>
+						<!-- put your configurations here -->
+						<source>1.8</source>
+						<target>1.8</target>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
